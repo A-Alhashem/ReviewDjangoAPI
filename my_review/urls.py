@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
-from my_app.views import ReviewListView, ReviewDetailView, ReviewUpdateView, ReviewDeleteView
+from my_app.views import ReviewListView, ReviewDetailView, ReviewUpdateView, ReviewDeleteView, ReviewCreateView, UserCreateAPIView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -25,6 +25,8 @@ urlpatterns = [
     path('detail/<detail_id>', ReviewDetailView.as_view(), name='detail'),
     path('update/<update_id>', ReviewUpdateView.as_view(), name='update'),
     path('delete/<delete_id>', ReviewDeleteView.as_view(), name='delete'),
+    path('create/', ReviewCreateView.as_view(), name='create'),
+    path('register/', UserCreateAPIView.as_view(), name='register'),
 
 ]
 
